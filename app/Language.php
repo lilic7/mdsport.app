@@ -13,4 +13,8 @@ class Language extends Model
     public function emodel(){
         return $this->hasMany('App\Emodel');
     }
+
+    public function getNameAttribute($name){
+        return strtoupper($name);
+    }
 }

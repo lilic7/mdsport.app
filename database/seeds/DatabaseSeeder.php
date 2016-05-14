@@ -13,5 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(FormatsTableSeeder::class);
         $this->call(IntroducersTableSeeder::class);
+        $this->call(LanguagesTableSeeder::class);
+        $this->call(ProductionsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(EmodelsTableSeeder::class);
+        $this->call(EmodelProgramTableSeeder::class);
     }
 }

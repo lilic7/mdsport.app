@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Introducer extends Model
 {
     public function emission(){
-        return $this->hasMany('App\Emission');
+        return $this->belongsToMany('App\Emission');
     }
 
     public function emodel(){
-        return $this->hasMany('App\Emodel');
+        return $this->belongsToMany('App\Emodel');
     }
 
     public function getNameAttribute($name){

@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+use App\Production;
+
 class ProductionsTableSeeder extends Seeder
 {
     /**
@@ -11,6 +14,10 @@ class ProductionsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Production::create([
+            'name' => 'autohton',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
     }
 }

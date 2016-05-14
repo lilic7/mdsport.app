@@ -19,7 +19,7 @@ class Emission extends Model
     }
 
     public function introducer(){
-        return $this->hasMany('App\Introducer');
+        return $this->belongsToMany('App\Introducer');
     }
 
     public function eplay(){

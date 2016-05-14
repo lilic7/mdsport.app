@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormatsTable extends Migration
+class CreateEmodelIntroducerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class CreateFormatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('formats', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->unique();
+        Schema::create('emodel_introducer', function (Blueprint $table) {
+            $table->integer('emodel_id')->unsigned();
+            $table->integer('introducer_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ class CreateFormatsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('formats');
+        Schema::drop('emodel_introducer');
     }
 }

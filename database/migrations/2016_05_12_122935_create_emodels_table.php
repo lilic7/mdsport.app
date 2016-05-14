@@ -14,7 +14,7 @@ class CreateEmodelsTable extends Migration
     {
         Schema::create('emodels', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->integer('production_id')->unsigned();

@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('emodel', "EmodelController");
+
+Route::post('emodel/create', ['as' => 'create_emodel', 'uses'=>'EmodelController@store']);

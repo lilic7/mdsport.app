@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+use App\Language;
+
 class LanguagesTableSeeder extends Seeder
 {
     /**
@@ -11,6 +14,15 @@ class LanguagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Language::create([
+            'name' => 'rom',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+        Language::create([
+            'name' => 'rus',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
     }
 }
