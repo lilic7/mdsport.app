@@ -15,4 +15,8 @@ class Category extends Model
     public function emodel(){
         return $this->hasMany('App\Emodel');
     }
+
+    public function parentCat(){
+        return Category::where('parent_id', $this->id)->first();
+    }
 }

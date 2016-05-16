@@ -16,14 +16,6 @@
 
         <div>
             {!! Form::label('Categorie') !!}
-            {!! Form::select('category', function($categories){
-                $cats = array();
-                foreach($categories as $category){
-                    $cats[$category->id] = $category->name;
-                }
-                dd($cats);
-                return $cats;
-            }) !!}
         </div>
     {!! Form::close() !!}
     @foreach($categories as $ac)

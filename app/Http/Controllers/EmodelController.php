@@ -33,9 +33,9 @@ class EmodelController extends Controller
     {
         return view('emodel.create', [
             'categories'    => Category::all('id', 'name', 'parent_id'),
-            'productions'   => Production::all('name'),
-            'languages'     => Language::all('name'),
-            'introducers'   => Introducer::all('name'),
+            'productions'   => Production::all('id', 'name'),
+            'languages'     => Language::all('id', 'name'),
+            'introducers'   => Introducer::all('id', 'name'),
         ]);
     }
 
@@ -95,5 +95,14 @@ class EmodelController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    protected function getCategories($categories){
+        $cats = Category::all();
+        foreach ($categories as $category) {
+            $cats[$category->id] = $category->name;
+        }
+        dd($cats);
+        return $cats;
     }
 }
